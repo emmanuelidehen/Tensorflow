@@ -1,13 +1,18 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#Last login: Sun Sep  6 01:18:48 on ttys000
+#(base) emmanuelidehen@Emmanuels-idehen-MacBook-Pro-2 ~ % python
+#Python 3.8.3 (default, Jul  2 2020, 11:26:31) 
+#[Clang 10.0.0 ] :: Anaconda, Inc. on darwin
+#Type "help", "copyright", "credits" or "license" for more information.
+#>>> #!/usr/bin/env python3
+#>>> # -*- coding: utf-8 -*-
 """
-Created on Sun Sep  6 01:10:07 2020
-
-@author: emmanuelidehen
-"""
+... Created on Sun Sep  6 01:10:07 2020
+... 
+... @author: emmanuelidehen
+... """
+'\nCreated on Sun Sep  6 01:10:07 2020\n\n@author: emmanuelidehen\n'
 #Credit -> GeeksforGeeks 
-#www.geeksforgeeks.org
-#Practice on Tensorflow 
+#www.geeksforgeeks.org 
 import numpy as np 
 import tensorflow as tf
 import matplotlib.pyplot as plt 
@@ -77,3 +82,12 @@ with tf.Session() as sess:
     training_cost = sess.run(cost, feed_dict ={X: x, Y: y}) 
     weight = sess.run(W) 
     bias = sess.run(b)
+# Calculating the predictions 
+predictions = weight * x + bias 
+print("Training cost =", training_cost, "Weight =", weight, "bias =", bias, '\n')
+# Plotting the Results 
+plt.plot(x, y, 'ro', label ='Original data') 
+plt.plot(x, predictions, label ='Fitted line') 
+plt.title('Linear Regression Result') 
+plt.legend() 
+plt.show()
